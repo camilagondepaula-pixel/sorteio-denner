@@ -1,17 +1,22 @@
 const brindes = [
-  "vale um chocolate 🍫",
-  "vale um abraço 🤗",
-  "vale uma música especial 🎶",
-  "vale um passeio 🚶",
-  "vale um presente 🎁",
-  "vale um elogio 💬",
-  "vale um café ☕",
-  "vale um carinho 🥰",
-  "vale um beijo 😘",
-  "vale um almoço 🍽️",
-  "vale uma declaração no Reels 🎥"
+"vale uma dancinha juntos 💃🕺",
+  "vale um shot com o Denner 🍹",
+  "vale um brinde coletivo em sua homenagem 🥂",
+  "vale uma foto polaroid com dedicatória 📸",
+  "vale um abraço coletivo 🤗",
+  "vale um discurso improvisado pro Denner 🎤",
+  "vale uma música escolhida por ele dedicada a você🎶",
+  "vale uma lembrança escrita num papelzinho pra guardar 📝",
+  "vale uma selfie engraçada com o Denner 🤳",
+  "vale um desenho ou rabisco feito por você pra ele ✏️",
+  "vale um brinde simbólico 💎",
+  "vale uma rodada de perguntas constrangedoras sobre o Denner 😂",
+  "vale um bilhete com um desejo pro futuro dele ✈️",
+  "vale uma cerveja para comemorar o país pra onde ele vai 🌎",
+  "vale um abraço de 10 segundos — cronometrado! ⏱️"
 ];
 
+// Ativa botão de sorteio após confirmação do Pix
 function confirmarPix() {
   const botao = document.getElementById("botao-sorteio");
   botao.disabled = false;
@@ -20,6 +25,7 @@ function confirmarPix() {
   botao.style.cursor = "pointer";
 }
 
+// Sorteia um brinde aleatório
 function sortear() {
   const indice = Math.floor(Math.random() * brindes.length);
   const brinde = brindes[indice];
@@ -29,11 +35,13 @@ function sortear() {
   soltarConfetes();
 }
 
+// Toca som de comemoração
 function tocarAudio() {
   const audio = new Audio("tmp5lr5_01x.mp3"); // certifique-se que o arquivo está na pasta
   audio.play();
 }
 
+// Solta confetes animados
 function soltarConfetes() {
   for (let i = 0; i < 30; i++) {
     const confete = document.createElement('div');
@@ -50,8 +58,18 @@ function soltarConfetes() {
 }
 
 // Emojis flutuantes aleatórios
-const emojis = document.querySelectorAll('.emoji');
-emojis.forEach((emoji) => {
-  emoji.style.left = Math.random() * 100 + 'vw';
-  emoji.style.animationDuration = (5 + Math.random() * 5) + 's';
+window.addEventListener('DOMContentLoaded', () => {
+  const emojis = document.querySelectorAll('.emoji');
+  emojis.forEach((emoji) => {
+    emoji.style.left = Math.random() * 100 + 'vw';
+    emoji.style.animationDuration = (5 + Math.random() * 5) + 's';
+  });
 });
+
+// Copia chave Pix
+function copyPix() {
+  const pixInput = document.getElementById("pixKey");
+  pixInput.select();
+  document.execCommand("copy");
+  alert("Chave Pix copiada!");
+}

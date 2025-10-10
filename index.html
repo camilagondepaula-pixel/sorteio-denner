@@ -1,30 +1,17 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <title>Sorteio do Denner 🎉</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="emoji-container">
-    <div class="emoji">🧚‍♂️</div>
-    <div class="emoji">✈️</div>
-    <div class="emoji">🧚‍♂️</div>
-    <div class="emoji">✈️</div>
-  </div>
-
   <div class="container">
-    <h1>Sorteio de Brindes 🎁</h1>
+    <h1>Sorteio do Denner 🎁</h1>
 
-    <div class="pix-section">
-      <p>Faça o Pix e depois clique em confirmar:</p>
-      <img src="qrcode-pix.png" alt="QR Code do Pix" class="pix-img">
-      <button onclick="confirmarPix()">✅ Confirmar Pix</button>
-    </div>
-
-    <button id="botao-sorteio" onclick="sortear()" disabled>Sortear Brinde 🎁</button>
-
-    <div id="resultado"></div>
+    <p>💸 Chave Pix para contribuição:</p>
+    <input type="text" id="pixKey" value="13725279667" readonly>
+    <button onclick="copyPix()">Copiar chave Pix</button>
   </div>
 
   <script src="script.js"></script>
