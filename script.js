@@ -1,5 +1,5 @@
 const brindes = [
-"vale uma dancinha juntos 💃🕺",
+  "vale uma dancinha juntos 💃🕺",
   "vale um shot com o Denner 🍹",
   "vale um brinde coletivo em sua homenagem 🥂",
   "vale uma foto polaroid com dedicatória 📸",
@@ -16,6 +16,7 @@ const brindes = [
   "vale um abraço de 10 segundos — cronometrado! ⏱️"
 ];
 
+// Ativa o botão de sorteio após confirmação do Pix
 function confirmarPix() {
   const botao = document.getElementById("botao-sorteio");
   botao.disabled = false;
@@ -24,6 +25,7 @@ function confirmarPix() {
   botao.style.cursor = "pointer";
 }
 
+// Inicia contagem regressiva
 function iniciarSorteio() {
   const countdown = document.getElementById("countdown");
   countdown.classList.remove("hidden");
@@ -43,6 +45,7 @@ function iniciarSorteio() {
   }, 1000);
 }
 
+// Sorteia sem repetir
 function sortear() {
   if (brindes.length === 0) {
     mostrarResultado("Todos os brindes já foram sorteados! 🎉");
@@ -57,6 +60,7 @@ function sortear() {
   tocarAudio();
 }
 
+// Mostra resultado em tela cheia
 function mostrarResultado(texto) {
   const resultadoTela = document.getElementById("resultadoTela");
   const resultadoTexto = document.getElementById("resultadoTexto");
@@ -67,10 +71,12 @@ function mostrarResultado(texto) {
   soltarFogos();
 }
 
+// Fecha tela de resultado
 function fecharResultado() {
   document.getElementById("resultadoTela").classList.add("hidden");
 }
 
+// Som de comemoração
 function tocarAudio() {
   try {
     const audio = new Audio("tmp5lr5_01x.mp3");
@@ -82,6 +88,7 @@ function tocarAudio() {
   }
 }
 
+// Fogos de artifício animados
 function soltarFogos() {
   for (let i = 0; i < 20; i++) {
     const fogo = document.createElement("div");
@@ -94,5 +101,6 @@ function soltarFogos() {
   }
 }
 
+// Copiar chave Pix
 function copyPix() {
-  const pixInput = document.getElementById
+  const pixInput = document.getElementById("
