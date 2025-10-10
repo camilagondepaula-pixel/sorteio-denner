@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Essencial para celular -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sorteio do Denner 🎁</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -18,15 +18,17 @@
     <button id="botao-confirmar" onclick="confirmarPix()">✅ Confirmar Pix</button>
 
     <br><br>
-    <button id="botao-sorteio" onclick="sortear()" disabled>🎁 Sortear Brinde</button>
-
-    <p id="resultado"></p>
+    <button id="botao-sorteio" onclick="iniciarSorteio()" disabled>🎁 Sortear Brinde</button>
   </div>
 
-  <!-- Emojis flutuantes -->
-  <div class="emoji">🎉</div>
-  <div class="emoji">🥳</div>
-  <div class="emoji">🎁</div>
+  <!-- Tela de contagem regressiva -->
+  <div id="countdown" class="overlay hidden"></div>
+
+  <!-- Tela de resultado em destaque -->
+  <div id="resultadoTela" class="overlay hidden">
+    <h1 id="resultadoTexto"></h1>
+    <button onclick="fecharResultado()">Fechar</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
