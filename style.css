@@ -1,4 +1,3 @@
-/* Estilo padrão (modo claro) */
 body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
@@ -18,7 +17,6 @@ body {
   width: 100%;
 }
 
-/* Inputs e botões */
 input {
   padding: 10px;
   font-size: 16px;
@@ -71,5 +69,79 @@ button:hover {
 
   #botao-sorteio:disabled {
     background-color: #555;
+  }
+}
+
+/* Overlay para contagem e resultado */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(18, 18, 18, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 999;
+  padding: 20px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#countdown {
+  font-size: 80px;
+  font-weight: bold;
+  color: #00e676;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+#resultadoTexto {
+  font-size: 32px;
+  font-weight: bold;
+  color: #ffeb3b;
+  max-width: 90%;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+#resultadoTela button {
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+/* Fogos de artifício */
+.firework {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #ffeb3b;
+  border-radius: 50%;
+  animation: explodir 1s ease-out forwards;
+  z-index: 1;
+}
+
+@keyframes explodir {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(10);
+    opacity: 0;
   }
 }

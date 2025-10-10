@@ -24,7 +24,6 @@ function confirmarPix() {
   botao.style.cursor = "pointer";
 }
 
-// Inicia contagem regressiva
 function iniciarSorteio() {
   const countdown = document.getElementById("countdown");
   countdown.classList.remove("hidden");
@@ -44,7 +43,6 @@ function iniciarSorteio() {
   }, 1000);
 }
 
-// Sorteia sem repetir
 function sortear() {
   if (brindes.length === 0) {
     mostrarResultado("Todos os brindes já foram sorteados! 🎉");
@@ -53,28 +51,26 @@ function sortear() {
 
   const indice = Math.floor(Math.random() * brindes.length);
   const brinde = brindes[indice];
-
-  // Remove o brinde sorteado da lista
   brindes.splice(indice, 1);
 
   mostrarResultado(`🎉 Você ganhou: ${brinde}`);
   tocarAudio();
 }
 
-// Mostra resultado em tela cheia
 function mostrarResultado(texto) {
   const resultadoTela = document.getElementById("resultadoTela");
   const resultadoTexto = document.getElementById("resultadoTexto");
 
   resultadoTexto.textContent = texto;
   resultadoTela.classList.remove("hidden");
+
+  soltarFogos();
 }
 
 function fecharResultado() {
   document.getElementById("resultadoTela").classList.add("hidden");
 }
 
-// Som de comemoração
 function tocarAudio() {
   try {
     const audio = new Audio("tmp5lr5_01x.mp3");
@@ -86,10 +82,22 @@ function tocarAudio() {
   }
 }
 
-// Copiar chave Pix
+function soltarFogos() {
+  for (let i = 0; i < 20; i++) {
+    const fogo = document.createElement("div");
+    fogo.classList.add("firework");
+    fogo.style.left = Math.random() * 100 + "vw";
+    fogo.style.top = Math.random() * 100 + "vh";
+    document.body.appendChild(fogo);
+
+    setTimeout(() => fogo.remove(), 1000);
+  }
+}
+
 function copyPix() {
   const pixInput = document.getElementById("pixKey");
   navigator.clipboard.writeText(pixInput.value).then(() => {
     alert("Chave Pix copiada!");
   });
 }
+``
