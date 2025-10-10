@@ -2,15 +2,18 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
   text-align: center;
-  padding: 40px;
+  padding: 20px;
+  margin: 0;
 }
 
 .container {
   background-color: #ffffff;
-  padding: 30px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: inline-block;
+  max-width: 600px;
+  width: 100%;
 }
 
 input {
@@ -18,21 +21,79 @@ input {
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  width: 250px;
+  width: 100%;
   margin-bottom: 10px;
+  box-sizing: border-box;
 }
 
 button {
   background-color: #e0f7fa;
   color: #006064;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 20px;
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 8px;
 }
 
 button:hover {
   background-color: #b2ebf2;
+}
+
+#botao-sorteio:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Confetes */
+.confete {
+  position: absolute;
+  top: -20px;
+  width: 10px;
+  height: 10px;
+  background-color: hsl(calc(360 * var(--i)), 70%, 60%);
+  animation: cair 4s linear forwards;
+  border-radius: 50%;
+}
+
+@keyframes cair {
+  to {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Emojis flutuantes */
+.emoji {
+  position: absolute;
+  top: -40px;
+  font-size: 30px;
+  animation: flutuar 10s linear infinite;
+}
+
+@keyframes flutuar {
+  to {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  input, button {
+    font-size: 18px;
+    padding: 14px;
+  }
+
+  #resultado {
+    font-size: 20px;
+    margin-top: 15px;
+  }
 }

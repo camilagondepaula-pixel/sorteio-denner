@@ -16,7 +16,7 @@ const brindes = [
   "vale um abraço de 10 segundos — cronometrado! ⏱️"
 ];
 
-// Ativa o botão de sorteio após confirmação do Pix
+// Ativa o botão de sorteio
 function confirmarPix() {
   const botao = document.getElementById("botao-sorteio");
   botao.disabled = false;
@@ -25,6 +25,7 @@ function confirmarPix() {
   botao.style.cursor = "pointer";
 }
 
+// Sorteia um brinde
 function sortear() {
   const indice = Math.floor(Math.random() * brindes.length);
   const brinde = brindes[indice];
@@ -34,6 +35,7 @@ function sortear() {
   soltarConfetes();
 }
 
+// Toca som de comemoração
 function tocarAudio() {
   try {
     const audio = new Audio("tmp5lr5_01x.mp3"); // precisa estar na mesma pasta
@@ -45,6 +47,7 @@ function tocarAudio() {
   }
 }
 
+// Solta confetes
 function soltarConfetes() {
   for (let i = 0; i < 20; i++) { // menos confetes = mais leve no celular
     const confete = document.createElement('div');
@@ -58,6 +61,7 @@ function soltarConfetes() {
   }
 }
 
+// Emojis flutuantes
 window.addEventListener('DOMContentLoaded', () => {
   const emojis = document.querySelectorAll('.emoji');
   emojis.forEach((emoji) => {
@@ -66,6 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// Copiar chave Pix
 function copyPix() {
   const pixInput = document.getElementById("pixKey");
   navigator.clipboard.writeText(pixInput.value).then(() => {
