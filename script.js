@@ -8,7 +8,7 @@ const brindes = [
   "vale uma música escolhida por ele dedicada a você🎶",
   "vale uma lembrança escrita num papelzinho pra guardar 📝",
   "vale uma selfie engraçada com o Denner 🤳",
-  "vale um desenho ou rabisco feito por você pra ele ✏️",
+  "vale um desenho ou rabisco feito por você pra gitele ✏️",
   "vale um brinde simbólico 💎",
   "vale uma rodada de perguntas constrangedoras sobre o Denner 😂",
   "vale um bilhete com um desejo pro futuro dele ✈️",
@@ -16,7 +16,7 @@ const brindes = [
   "vale um abraço de 10 segundos — cronometrado! ⏱️"
 ];
 
-// Ativa botão de sorteio após confirmação do Pix
+// Ativa o botão de sorteio após confirmação do Pix
 function confirmarPix() {
   const botao = document.getElementById("botao-sorteio");
   botao.disabled = false;
@@ -37,7 +37,7 @@ function sortear() {
 
 // Toca som de comemoração
 function tocarAudio() {
-  const audio = new Audio("tmp5lr5_01x.mp3"); // certifique-se que o arquivo está na pasta
+  const audio = new Audio("tmp5lr5_01x.mp3"); // certifique-se que o arquivo está na mesma pasta que index.html
   audio.play();
 }
 
@@ -66,10 +66,9 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Copia chave Pix
+// Copia a chave Pix para a área de transferência
 function copyPix() {
   const pixInput = document.getElementById("pixKey");
   pixInput.select();
   document.execCommand("copy");
   alert("Chave Pix copiada!");
-}

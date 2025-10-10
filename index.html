@@ -2,17 +2,29 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Sorteio do Denner 🎉</title>
+  <title>Sorteio do Denner 🎁</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h1>Sorteio do Denner 🎁</h1>
 
-    <p>💸 Chave Pix para contribuição:</p>
+    <p>🔑 Chave Pix para contribuição:</p>
     <input type="text" id="pixKey" value="13725279667" readonly>
     <button onclick="copyPix()">Copiar chave Pix</button>
+    <br><br>
+
+    <button id="botao-confirmar" onclick="confirmarPix()">✅ Confirmar Pix</button>
+    <br><br>
+
+    <button id="botao-sorteio" onclick="sortear()" disabled>🎁 Sortear Brinde</button>
+    <p id="resultado"></p>
   </div>
+
+  <!-- Emojis flutuantes -->
+  <div class="emoji">🎉</div>
+  <div class="emoji">🥳</div>
+  <div class="emoji">🎁</div>
 
   <script src="script.js"></script>
 </body>
