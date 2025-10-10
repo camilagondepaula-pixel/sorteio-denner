@@ -103,4 +103,10 @@ function soltarFogos() {
 
 // Copiar chave Pix
 function copyPix() {
-  const pixInput = document.getElementById("
+  const pixInput = document.getElementById("pixKey");
+  navigator.clipboard.writeText(pixInput.value).then(() => {
+    alert("Chave Pix copiada!");
+  }).catch(() => {
+    alert("Não foi possível copiar a chave Pix.");
+  });
+}
