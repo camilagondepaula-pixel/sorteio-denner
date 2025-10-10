@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorteio do Denner 🎉</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="emoji-container">
+    <div class="emoji">🧚‍♂️</div>
+    <div class="emoji">✈️</div>
+    <div class="emoji">🧚‍♂️</div>
+    <div class="emoji">✈️</div>
+  </div>
+
+  <div class="container">
+    <h1>Sorteio de Brindes 🎁</h1>
+
+    <div class="pix-section">
+      <p>Faça o Pix e depois clique em confirmar:</p>
+      <img src="qrcode-pix.png" alt="QR Code do Pix" class="pix-img">
+      <button onclick="confirmarPix()">✅ Confirmar Pix</button>
+    </div>
+
+    <button id="botao-sorteio" onclick="sortear()" disabled>Sortear Brinde 🎁</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

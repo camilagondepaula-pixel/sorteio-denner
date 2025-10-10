@@ -1,0 +1,106 @@
+body {
+  font-family: 'Comic Sans MS', cursive;
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  text-align: center;
+  padding: 50px;
+  color: white;
+  overflow-x: hidden;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+  max-width: 500px;
+  margin: auto;
+  color: #333;
+}
+
+button {
+  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: not-allowed;
+  margin-top: 20px;
+  transition: transform 0.2s ease;
+}
+
+button:enabled {
+  cursor: pointer;
+  background-color: #28a745;
+}
+
+button:hover:enabled {
+  transform: scale(1.05);
+}
+
+#resultado {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2e8b57;
+}
+
+.pix-section {
+  margin-top: 30px;
+}
+
+.pix-img {
+  margin-top: 10px;
+  width: 200px;
+  border: 4px solid #ff69b4;
+  border-radius: 10px;
+}
+
+.emoji-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 999;
+}
+
+.emoji {
+  position: absolute;
+  font-size: 32px;
+  animation: flutuar 10s infinite linear;
+}
+
+@keyframes flutuar {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.confete {
+  position: fixed;
+  top: -20px;
+  width: 10px;
+  height: 10px;
+  background-color: hsl(calc(360 * var(--i)), 100%, 50%);
+  animation: cair 4s linear forwards;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+@keyframes cair {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
