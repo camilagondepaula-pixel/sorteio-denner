@@ -95,9 +95,4 @@ function soltarFogos() {
 }
 
 function copyPix() {
-  const pixInput = document.getElementById("pixKey");
-  navigator.clipboard.writeText(pixInput.value).then(() => {
-    alert("Chave Pix copiada!");
-  });
-}
-``
+  const pixInput = document.getElementById

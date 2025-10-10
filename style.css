@@ -49,6 +49,12 @@ button:hover {
   cursor: not-allowed;
 }
 
+#avisoPix {
+  font-size: 14px;
+  color: #ff5722;
+  margin-top: 10px;
+}
+
 /* Dark mode automático */
 @media (prefers-color-scheme: dark) {
   body {
